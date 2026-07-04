@@ -1,18 +1,54 @@
 @import "tailwindcss";
 
 :root {
+  --background: #F7F7F5;
+  --surface: #F4F4F2;
+  --surface-hover: #EAEAEA;
+  --card: #FFFFFF;
+  --border: #EAEAEA;
+  --heading: #111111;
+  --text: #151515;
+  --text-secondary: #4A4A4A;
+  --muted: #666666;
+  --metadata: #7A7A7A;
+  --muted-label: #8D8D8D;
+  --primary: #111111;
+  --accent: #2D5BFF;
+  --accent-hover: #1746E6;
+  
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.12);
+  --scrollbar-thumb: #D4D1CC;
+  
+  --accent-blue: #2563EB;
+  --accent-purple: #7C3AED;
+  --accent-cyan: #0891B2;
+}
+
+.dark {
   --background: #09090B;
-  --foreground: #F4F4F5;
-  --card-bg: #121214;
-  --card-border: rgba(63, 63, 70, 0.4);
-  --accent-blue: #3B82F6;
-  --accent-purple: #8B5CF6;
-  --accent-cyan: #06B6D4;
+  --surface: #1C1C1E;
+  --surface-hover: #2C2C2E;
+  --card: #121214;
+  --border: #27272A;
+  --heading: #F4F4F5;
+  --text: #F4F4F5;
+  --text-secondary: #E4E4E6;
+  --muted: #A1A1AA;
+  --metadata: #71717A;
+  --muted-label: #52525B;
+  --primary: #FFFFFF;
+  --accent: #60A5FA;
+  --accent-hover: #3B82F6;
+  
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --card-shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.45);
+  --scrollbar-thumb: #27272A;
 }
 
 body {
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--text);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   margin: 0;
@@ -26,22 +62,22 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: var(--text-muted);
 }
 
 /* Custom Selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.25);
-  color: #ffffff;
+  background: rgba(124, 58, 237, 0.1);
+  color: #18181B;
 }
 
 /* Smooth Scrolling */
@@ -68,35 +104,43 @@ p, li, blockquote {
   }
 }
 
-/* Background Gradients */
+/* Background Grid Pattern */
 .grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(63, 63, 70, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(63, 63, 70, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(24, 24, 27, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 24, 27, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.gradient-glow {
-  background: radial-gradient(circle 800px at 50% 200px, rgba(120, 119, 198, 0.15), transparent 80%);
+.dark .grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
-.glow-card {
-  position: relative;
+/* Bento Card Style */
+.bento-card {
+  border-radius: 32px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glow-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.05));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+@media (min-width: 768px) {
+  .bento-card {
+    border-radius: 40px;
+  }
 }
 
-.glow-card-hover:hover::after {
-  background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.3), transparent, rgba(139, 92, 246, 0.3));
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Accent badges glow */
+.accent-glow-blue {
+  background: radial-gradient(circle 80px at 50% 50%, rgba(37, 99, 235, 0.04), transparent 80%);
+}
+
+.accent-glow-purple {
+  background: radial-gradient(circle 80px at 50% 50%, rgba(124, 58, 237, 0.04), transparent 80%);
 }

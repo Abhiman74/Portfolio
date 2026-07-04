@@ -118,7 +118,7 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
+                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
                     placeholder="Jane Doe"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
+                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
                     placeholder="jane@example.com"
                   />
                 </div>
@@ -152,7 +152,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full p-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-650 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans resize-none"
+                    className="w-full p-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans resize-none"
                     placeholder="Let's talk about..."
                   />
                 </div>

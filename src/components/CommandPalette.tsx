@@ -62,7 +62,7 @@ export default function CommandPalette() {
       shortcut: ["L", "I"],
       icon: <Linkedin className="w-4 h-4" />,
       action: () => {
-        window.open("https://linkedin.com", "_blank"); // Add LinkedIn placeholder
+        window.open("https://www.linkedin.com/in/abhiman-singh-623176216/", "_blank");
         setIsOpen(false);
       }
     },
@@ -83,7 +83,7 @@ export default function CommandPalette() {
       category: "Actions",
       icon: <Mail className="w-4 h-4" />,
       action: () => {
-        window.open("mailto:abhimansaharan@gmail.com");
+        window.open("mailto:abhimansaharan1@gmail.com");
         setIsOpen(false);
       }
     },
@@ -94,7 +94,7 @@ export default function CommandPalette() {
       shortcut: ["R", "S"],
       icon: <FileText className="w-4 h-4" />,
       action: () => {
-        alert("Resume download triggered (placeholder)");
+        window.open("/resume.pdf", "_blank");
         setIsOpen(false);
       }
     }
@@ -161,11 +161,11 @@ export default function CommandPalette() {
       <div className="fixed bottom-6 right-6 z-40 hidden md:block">
         <button
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg border border-zinc-800 bg-[#0d0d0f]/90 text-zinc-400 text-xs shadow-lg backdrop-blur hover:text-zinc-200 transition-all active:scale-95"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--card)]/90 text-[var(--text-secondary)] text-xs shadow-lg backdrop-blur hover:text-[var(--text)] transition-all active:scale-95"
         >
           <span>Press</span>
-          <kbd className="px-1.5 py-0.5 rounded border border-zinc-700 bg-zinc-800 text-[10px] font-mono leading-none">⌘</kbd>
-          <kbd className="px-1.5 py-0.5 rounded border border-zinc-700 bg-zinc-800 text-[10px] font-mono leading-none">K</kbd>
+          <kbd className="px-1.5 py-0.5 rounded border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-[10px] font-mono leading-none">⌘</kbd>
+          <kbd className="px-1.5 py-0.5 rounded border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] text-[10px] font-mono leading-none">K</kbd>
           <span>to navigate</span>
         </button>
       </div>
@@ -179,7 +179,7 @@ export default function CommandPalette() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="absolute inset-0 bg-black/85 backdrop-blur-md"
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
             />
 
             {/* Menu Container */}
@@ -188,12 +188,12 @@ export default function CommandPalette() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: -8 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative w-full max-w-lg mx-4 rounded-xl border border-zinc-800 bg-[#121214] shadow-2xl shadow-black/50 overflow-hidden"
+              className="relative w-full max-w-lg mx-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-2xl overflow-hidden"
               onKeyDown={handleKeyDown}
             >
               {/* Input Bar */}
-              <div className="flex items-center gap-3 px-4 border-b border-zinc-800/80">
-                <Search className="w-5 h-5 text-zinc-500 shrink-0" />
+              <div className="flex items-center gap-3 px-4 border-b border-[var(--border)]">
+                <Search className="w-5 h-5 text-[var(--muted)] shrink-0" />
                 <input
                   ref={inputRef}
                   type="text"
@@ -203,11 +203,11 @@ export default function CommandPalette() {
                     setSearch(e.target.value);
                     setSelectedIndex(0);
                   }}
-                  className="w-full h-12 bg-transparent text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none"
+                  className="w-full h-12 bg-transparent text-sm text-[var(--text)] placeholder-[var(--muted-label)] focus:outline-none"
                 />
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-xxs px-1.5 py-0.5 rounded border border-zinc-800 bg-zinc-900 text-zinc-500 hover:text-zinc-300 transition-colors"
+                  className="text-xxs px-1.5 py-0.5 rounded border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--text)] transition-colors"
                 >
                   ESC
                 </button>
@@ -228,18 +228,18 @@ export default function CommandPalette() {
                         onMouseEnter={() => setSelectedIndex(index)}
                         className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-left text-xs transition-all ${
                           isSelected
-                            ? "bg-zinc-800/80 text-white"
-                            : "text-zinc-400 hover:text-zinc-200"
+                            ? "bg-[var(--surface)] text-[var(--text)] font-semibold"
+                            : "text-[var(--text-secondary)] hover:text-[var(--text)] hover:bg-[var(--surface-hover)]/30"
                         }`}
                       >
                         <div className="flex items-center gap-2.5">
                           {cmd.icon ? (
                             cmd.icon
                           ) : (
-                            <CornerDownLeft className="w-3.5 h-3.5 text-zinc-600" />
+                            <CornerDownLeft className="w-3.5 h-3.5 text-[var(--muted)]" />
                           )}
                           <span>{cmd.title}</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-900 text-zinc-600 ml-2 font-mono">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--surface)] text-[var(--muted)] ml-2 font-mono">
                             {cmd.category}
                           </span>
                         </div>
@@ -249,7 +249,7 @@ export default function CommandPalette() {
                             {cmd.shortcut.map(key => (
                               <kbd
                                 key={key}
-                                className="px-1.5 py-0.5 rounded border border-zinc-700 bg-zinc-800 text-[10px] font-mono text-zinc-400"
+                                className="px-1.5 py-0.5 rounded border border-[var(--border)] bg-[var(--surface)] text-[10px] font-mono text-[var(--text-secondary)]"
                               >
                                 {key}
                               </kbd>
@@ -260,7 +260,7 @@ export default function CommandPalette() {
                     );
                   })
                 ) : (
-                  <div className="py-8 text-center text-zinc-500 text-xs font-mono">
+                  <div className="py-8 text-center text-[var(--muted)] text-xs font-mono">
                     No results found for &quot;{search}&quot;
                   </div>
                 )}
