@@ -71,23 +71,41 @@ export default function About() {
                 </h4>
               </div>
               
-              <div className="space-y-3 font-sans">
-                <div>
-                  <h5 className="text-sm font-medium text-zinc-100">
-                    B.Tech Computer Science Engineering
-                  </h5>
-                  <p className="text-xs text-zinc-400 mt-0.5">Bennett University</p>
+              <div className="space-y-4 font-sans">
+                {/* Bennett University */}
+                <div className="space-y-2">
+                  <div>
+                    <h5 className="text-sm font-medium text-zinc-100">
+                      B.Tech Computer Science Engineering
+                    </h5>
+                    <p className="text-xs text-zinc-400 mt-0.5">Bennett University</p>
+                  </div>
+                  <div className="flex items-center justify-between text-[11px] text-zinc-400">
+                    <span className="flex items-center gap-1.5 font-mono">
+                      <Calendar className="w-3.5 h-3.5 text-zinc-500" />
+                      2022 – 2026
+                    </span>
+                    <span className="flex items-center gap-1.5 font-mono">
+                      <BookOpen className="w-3.5 h-3.5 text-zinc-500" />
+                      CGPA: 8.35 / 10
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-zinc-400 border-t border-zinc-800/50 pt-3">
-                  <span className="flex items-center gap-1.5 font-mono">
-                    <Calendar className="w-3.5 h-3.5 text-zinc-500" />
-                    2022 – 2026
-                  </span>
-                  <span className="flex items-center gap-1.5 font-mono">
-                    <BookOpen className="w-3.5 h-3.5 text-zinc-500" />
-                    CGPA: 8.35 / 10
-                  </span>
+                {/* BITSOM */}
+                <div className="border-t border-zinc-800/50 pt-3 space-y-2">
+                  <div>
+                    <h5 className="text-sm font-medium text-zinc-100">
+                      Product Management with Generative &amp; Agentic AI
+                    </h5>
+                    <p className="text-xs text-zinc-400 mt-0.5">BITS School of Management (BITSOM)</p>
+                  </div>
+                  <div className="flex items-center justify-between text-[11px] text-zinc-400">
+                    <span className="flex items-center gap-1.5 font-mono">
+                      <Calendar className="w-3.5 h-3.5 text-zinc-500" />
+                      6-Month Specialized Program
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

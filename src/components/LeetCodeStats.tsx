@@ -32,7 +32,7 @@ export default function LeetCodeStats() {
           </div>
         </div>
         <a 
-          href="https://leetcode.com" 
+          href="https://leetcode.com/u/Sano_codes/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-xxs font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-950 px-2.5 py-1 rounded"
@@ -75,22 +75,22 @@ export default function LeetCodeStats() {
             
             {/* Center Content */}
             <div className="absolute text-center space-y-0.5">
-              <span className="text-3xl font-bold text-white tracking-tight">170+</span>
+              <span className="text-3xl font-bold text-white tracking-tight">170</span>
               <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Solved</p>
             </div>
           </div>
 
           <div className="flex gap-4 text-center font-mono text-[10px]">
             <div>
-              <span className="text-emerald-400 font-semibold block">65</span>
+              <span className="text-emerald-400 font-semibold block">82</span>
               <span className="text-zinc-500 text-[9px] uppercase">Easy</span>
             </div>
             <div className="border-l border-zinc-800/60 pl-4">
-              <span className="text-amber-400 font-semibold block">90</span>
+              <span className="text-amber-400 font-semibold block">78</span>
               <span className="text-zinc-500 text-[9px] uppercase">Medium</span>
             </div>
             <div className="border-l border-zinc-800/60 pl-4">
-              <span className="text-rose-500 font-semibold block">15</span>
+              <span className="text-rose-500 font-semibold block">10</span>
               <span className="text-zinc-500 text-[9px] uppercase">Hard</span>
             </div>
           </div>

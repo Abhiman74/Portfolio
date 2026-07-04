@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, CornerDownLeft, ExternalLink, Mail, FileText } from "lucide-react";
+import { Search, CornerDownLeft, ExternalLink, Mail, FileText, Trophy } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 
 interface CommandItem {
@@ -63,6 +63,17 @@ export default function CommandPalette() {
       icon: <Linkedin className="w-4 h-4" />,
       action: () => {
         window.open("https://linkedin.com", "_blank"); // Add LinkedIn placeholder
+        setIsOpen(false);
+      }
+    },
+    {
+      id: "social-leetcode",
+      title: "Open LeetCode Profile",
+      category: "External Links",
+      shortcut: ["L", "C"],
+      icon: <Trophy className="w-4 h-4 text-orange-500" />,
+      action: () => {
+        window.open("https://leetcode.com/u/Sano_codes/", "_blank");
         setIsOpen(false);
       }
     },
