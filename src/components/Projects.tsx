@@ -143,6 +143,35 @@ export default function Projects() {
           </div>
         </div>
       )
+    },
+    {
+      id: 5,
+      title: "TradeFlow",
+      category: "Systems",
+      tagline: "Institutional-Grade Electronic Trading Platform",
+      problem: "Standard retail platforms struggle with microsecond matching performance and fail to provide standard FIX endpoints.",
+      solution: "Engineered a distributed platform with a FIX 4.4 gateway, synchronous pre-trade risk engine, and ultra-low-latency in-memory book matching under 500ns.",
+      features: [
+        "Multi-session FIX 4.4 Protocol Gateway (TCP)",
+        "In-Memory Matching Engine (<500ns execution latency)",
+        "Symbol Routing over Redis Pub/Sub heartbeats",
+        "Write Pipeline offloaded to Apache Kafka",
+        "GBM price simulation via Node.js Worker Threads"
+      ],
+      stack: ["Next.js 15", "Node.js", "TypeScript", "Redis", "Apache Kafka", "PostgreSQL", "Prisma"],
+      github: "https://github.com/Abhiman74/tradeflow",
+      demo: "#",
+      graphic: (
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 flex flex-col justify-end p-6 border-b border-zinc-800">
+          <div className="flex items-center gap-2 mb-2 text-cyan-400">
+            <Cpu className="w-4 h-4" />
+            <span className="text-[10px] font-mono tracking-widest uppercase">Matching Latency: 240ns</span>
+          </div>
+          <div className="text-zinc-500 font-mono text-[9px] leading-relaxed select-none overflow-hidden h-20">
+            {`> [FIX 4.4] TCP Connection Client -> Port 9878\n> NewOrderSingle 35=D (AAPL, BUY, 100, LIMIT)\n> Risk Engine: APPROVED\n> Match result: FILLED (Order matched in 240ns)\n> Kafka: Publish tradeflow.audit`}
+          </div>
+        </div>
+      )
     }
   ];
 
