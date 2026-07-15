@@ -221,6 +221,48 @@ export default function Projects() {
       challenges: "Ensuring frame processing speeds remain high (30fps+) on consumer hardware while running the reinforcement learning optimization cycles simultaneously.",
       learnings: "Learned how to map visual bounding boxes to numeric mathematical states, design custom rewards, and implement Q-Learning tables from scratch.",
       improvements: "Hope to transition to deep reinforcement learning (DQN) models capable of controlling multiple intersection grids at once."
+    },
+    {
+      id: 5,
+      title: "TradeFlow",
+      category: "Trading Simulator",
+      tagline: "High-Frequency Exchange Matching Engine and Simulation",
+      problem: "Standard retail platforms struggle with microsecond matching performance and fail to provide standard FIX endpoints.",
+      solution: "Engineered a distributed platform with a FIX 4.4 gateway, synchronous pre-trade risk engine, and ultra-low-latency in-memory book matching under 500ns.",
+      features: [
+        "Multi-session FIX 4.4 Protocol Gateway (TCP)",
+        "In-Memory Matching Engine (<500ns execution latency)",
+        "Symbol Routing over Redis Pub/Sub heartbeats",
+        "Write Pipeline offloaded to Apache Kafka",
+        "GBM price simulation via Node.js Worker Threads"
+      ],
+      stack: ["Next.js 15", "Node.js", "TypeScript", "Redis", "Apache Kafka", "PostgreSQL", "Prisma"],
+      github: "https://github.com/Abhiman74/tradeflow",
+      demo: "#",
+      graphic: (
+        <div className="absolute inset-0 bg-[#111113] flex flex-col justify-end p-6 border-b border-[#262626]">
+          <div className="flex items-center gap-2 mb-2 text-[#06B6D4]">
+            <Cpu className="w-4 h-4 animate-pulse" />
+            <span className="text-[10px] font-mono tracking-widest uppercase">Matching Latency: 240ns</span>
+          </div>
+          <div className="text-[#A1A1AA] font-mono text-[9px] leading-relaxed select-none overflow-hidden h-20">
+            {`> [FIX 4.4] TCP Connection Client -> Port 9878\n> NewOrderSingle 35=D (AAPL, BUY, 100, LIMIT)\n> Risk Engine: APPROVED\n> Match result: FILLED (Order matched in 240ns)\n> Kafka: Publish tradeflow.audit`}
+          </div>
+        </div>
+      ),
+      architecture: `
+      +------------------+     +--------------------+
+      | FIX Client (TCP) | --> | FIX Gateway Router |
+      +------------------+     +--------------------+
+                                         |
+                                         v
+      +------------------+     +--------------------+
+      | Kafka Audit Logs | <-- | C++ Matching Engine|
+      +------------------+     +--------------------+
+      `,
+      challenges: "Managing high-throughput Kafka serialization and TCP socket buffers without dropped packages or connection timeout drops.",
+      learnings: "Understood FIX protocol structures, network packet parsing, and cross-thread memory sharing concepts.",
+      improvements: "Build a live market data web socket stream and real-time canvas charting dashboard."
     }
   ];
 
