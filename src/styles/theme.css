@@ -1,0 +1,24 @@
+/* src/styles/theme.css */
+:root {
+  /* Light theme colors */
+  --primary: #3B5BFF;        /* Indigo */
+  --secondary: #4B5563;      /* Gray */
+  --muted: #F4F4F2;          /* Light gray */
+  --background: #F7F7F5;    /* Page background */
+  --foreground: #111111;    /* Primary text */
+  --card: #FFFFFF;          /* Card background */
+  --border: #E5E7EB;        /* Border color */
+  --accent: #3B5BFF;        /* Accent color */
+}
+
+.dark {
+  /* Dark theme overrides */
+  --primary: #4C6FFF;
+  --secondary: #D1D5DB;
+  --muted: #1F1F22;
+  --background: #09090B;
+  --foreground: #FFFFFF;
+  --card: #161618;
+  --border: #2C2C2C;
+  --accent: #4C6FFF;
+}

@@ -1,128 +1,145 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Trophy, Flame, CheckCircle2 } from "lucide-react";
+import { Trophy, Flame, CheckCircle2, Award, Zap } from "lucide-react";
 
 export default function LeetCodeStats() {
   const topics = [
     "Arrays & Hashing",
-    "Two Pointers",
-    "Sliding Window",
-    "Stack & Queues",
     "Binary Search",
-    "Trees & Graphs",
     "Dynamic Programming",
-    "Greedy Algorithms"
+    "Graphs",
+    "Trees",
+    "Hashing",
+    "Sliding Window"
   ];
 
   return (
-    <div className="glow-card border border-zinc-800/80 bg-[#0d0d0f]/50 p-6 md:p-8 rounded-xl space-y-6">
-      
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="p-1.5 rounded bg-zinc-900 border border-zinc-800">
-            <Trophy className="w-5 h-5 text-amber-500" />
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold tracking-wider font-mono text-zinc-200 uppercase">
-              LeetCode Profile
-            </h3>
-            <p className="text-xxs font-mono text-zinc-500">DSA &amp; PROBLEM SOLVING</p>
-          </div>
-        </div>
-        <a 
-          href="https://leetcode.com/u/Sano_codes/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-xxs font-mono text-zinc-400 hover:text-white border border-zinc-800 bg-zinc-950 px-2.5 py-1 rounded"
-        >
-          View Profile
-        </a>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+    <section id="leetcode" className="py-28 relative bg-[#09090B] border-t border-[#262626]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Solved Metric Ring */}
-        <div className="md:col-span-5 flex flex-col items-center justify-center space-y-4">
-          <div className="relative w-36 h-36 flex items-center justify-center">
-            {/* Background circle */}
-            <svg className="w-full h-full transform -rotate-90">
-              <circle
-                cx="72"
-                cy="72"
-                r="60"
-                className="stroke-zinc-800/60"
-                strokeWidth="8"
-                fill="transparent"
-              />
-              {/* Foreground circle */}
-              <motion.circle
-                cx="72"
-                cy="72"
-                r="60"
-                className="stroke-orange-500"
-                strokeWidth="8"
-                fill="transparent"
-                strokeDasharray="377"
-                initial={{ strokeDashoffset: 377 }}
-                whileInView={{ strokeDashoffset: 377 - (377 * 170) / 300 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                strokeLinecap="round"
-              />
-            </svg>
-            
-            {/* Center Content */}
-            <div className="absolute text-center space-y-0.5">
-              <span className="text-3xl font-bold text-white tracking-tight">170</span>
-              <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Solved</p>
-            </div>
-          </div>
-
-          <div className="flex gap-4 text-center font-mono text-[10px]">
-            <div>
-              <span className="text-emerald-400 font-semibold block">82</span>
-              <span className="text-zinc-500 text-[9px] uppercase">Easy</span>
-            </div>
-            <div className="border-l border-zinc-800/60 pl-4">
-              <span className="text-amber-400 font-semibold block">78</span>
-              <span className="text-zinc-500 text-[9px] uppercase">Medium</span>
-            </div>
-            <div className="border-l border-zinc-800/60 pl-4">
-              <span className="text-rose-500 font-semibold block">10</span>
-              <span className="text-zinc-500 text-[9px] uppercase">Hard</span>
-            </div>
-          </div>
+        {/* Section Header */}
+        <div className="mb-16">
+          <span className="text-xs font-mono text-[#71717A] uppercase tracking-widest">06 / Algorithms</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 font-sans">
+            LeetCode DSA Standings
+          </h2>
+          <div className="h-1 w-16 bg-gradient-to-r from-[#4F46E5] to-[#8B5CF6] mt-4 rounded-full" />
         </div>
 
-        {/* Topics List */}
-        <div className="md:col-span-7 space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Demonstrated competency in key DSA topics:</span>
-          </div>
+        {/* Dashboard grid layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Left Block: Problem Ring Metric */}
+          <div className="lg:col-span-5 premium-card p-8 flex flex-col items-center justify-center space-y-6">
+            <div className="flex items-center gap-2.5 self-start mb-2 border-b border-[#262626] pb-3 w-full">
+              <Trophy className="w-5 h-5 text-[#F59E0B]" />
+              <h3 className="text-sm font-bold tracking-wider font-mono text-white uppercase">
+                Solved Standings
+              </h3>
+            </div>
 
-          <div className="grid grid-cols-2 gap-2.5">
-            {topics.map((topic, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 p-2 rounded border border-zinc-850 bg-zinc-900/30 text-xs text-zinc-300 font-sans"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-orange-500/80" />
-                <span>{topic}</span>
+            <div className="relative w-40 h-40 flex items-center justify-center">
+              {/* Background circular ring */}
+              <svg className="w-full h-full transform -rotate-90">
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="68"
+                  className="stroke-[#262626]"
+                  strokeWidth="8"
+                  fill="transparent"
+                />
+                {/* Foreground circular ring */}
+                <motion.circle
+                  cx="80"
+                  cy="80"
+                  r="68"
+                  className="stroke-[#F59E0B]"
+                  strokeWidth="8"
+                  fill="transparent"
+                  strokeDasharray="427"
+                  initial={{ strokeDashoffset: 427 }}
+                  whileInView={{ strokeDashoffset: 427 - (427 * 170) / 300 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  strokeLinecap="round"
+                />
+              </svg>
+              
+              {/* Center Metrics Text */}
+              <div className="absolute text-center space-y-0.5">
+                <span className="text-4xl font-extrabold text-white tracking-tight font-sans">170+</span>
+                <p className="text-[9px] font-mono text-[#71717A] uppercase tracking-widest">Total Solved</p>
               </div>
-            ))}
+            </div>
+
+            {/* Metrics distribution columns */}
+            <div className="flex gap-6 text-center font-mono text-xs pt-2">
+              <div>
+                <span className="text-[#10B981] font-bold block text-base">82</span>
+                <span className="text-[#71717A] text-[9px] uppercase tracking-wider">Easy</span>
+              </div>
+              <div className="border-l border-[#262626] pl-6">
+                <span className="text-[#F59E0B] font-bold block text-base">78</span>
+                <span className="text-[#71717A] text-[9px] uppercase tracking-wider">Medium</span>
+              </div>
+              <div className="border-l border-[#262626] pl-6">
+                <span className="text-[#E11D48] font-bold block text-base">10</span>
+                <span className="text-[#71717A] text-[9px] uppercase tracking-wider">Hard</span>
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 p-2.5 rounded bg-orange-500/5 border border-orange-500/10 text-[10px] font-mono text-orange-400/90">
-            <Flame className="w-3.5 h-3.5" />
-            <span>Active problem solver. Consistently strengthening DSA conceptual foundations.</span>
+          {/* Right Block: Contest Ratings & Favorite Topics */}
+          <div className="lg:col-span-7 flex flex-col justify-between gap-6">
+            
+            {/* Contest rating info card */}
+            <div className="premium-card p-6 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-[#111113] border border-[#262626] flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-[#8B5CF6]" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-white font-sans">Competitive Profile</h4>
+                  <p className="text-xs text-[#71717A] font-mono mt-0.5">Leetcode Profile: Sano_codes</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <span className="text-xl font-mono font-extrabold text-white block">1570+</span>
+                <span className="text-[9px] text-[#71717A] font-mono uppercase tracking-wider">Peak CodeChef Rating</span>
+              </div>
+            </div>
+
+            {/* Favorite Topics Grid */}
+            <div className="premium-card p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#A1A1AA]">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
+                <span>Core Data Structures &amp; Algorithms Proficiency:</span>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {topics.map((topic, i) => (
+                  <span
+                    key={i}
+                    className="text-xs font-mono px-3.5 py-2 rounded-xl border border-[#262626] bg-[#09090B] text-[#A1A1AA] hover:text-white transition-colors cursor-default"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2.5 p-3 rounded-xl bg-[#F59E0B]/5 border border-[#F59E0B]/10 text-xs font-mono text-[#F59E0B]/90 mt-2">
+                <Flame className="w-4 h-4 text-[#F59E0B] animate-pulse" />
+                <span>Active DSA Solver. Enhancing conceptual capacity under speed checks.</span>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
       </div>
-
-    </div>
+    </section>
   );
 }

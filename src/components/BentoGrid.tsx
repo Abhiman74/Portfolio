@@ -73,7 +73,7 @@ const TechPill = ({ label }: { label: string }) => {
         );
       case "Express.js":
         return (
-          <div className="w-3.5 h-3.5 bg-zinc-800 text-white rounded-full flex items-center justify-center font-sans font-black text-[6px] select-none">EX</div>
+          <div className="w-3.5 h-3.5 bg-card text-white rounded-full flex items-center justify-center font-sans font-black text-[6px] select-none">EX</div>
         );
       case "FastAPI":
         return (
@@ -159,7 +159,7 @@ const TechPill = ({ label }: { label: string }) => {
           </svg>
         );
       default:
-        return <span className="w-2 h-2 rounded-full bg-zinc-400"></span>;
+        return <span className="w-2 h-2 rounded-full bg-muted"></span>;
     }
   };
 
@@ -236,7 +236,7 @@ export default function BentoGrid() {
               </p>
             </div>
                        <div className="flex flex-wrap items-center gap-2 text-xs font-sans pt-2">
-              <a href="#projects" className="px-5 py-2.5 bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 rounded-full font-bold hover:translate-y-[-2px] hover:shadow-md transition-all shadow-sm">
+              <a href="#projects" className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-bold hover:translate-y-[-2px] hover:shadow-md transition-all shadow-sm">
                 Explore Projects &rarr;
               </a>
               <button 
@@ -261,8 +261,8 @@ export default function BentoGrid() {
               />
             </div>
             <div className="flex flex-col items-center gap-1.5 text-center">
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-950 text-zinc-300 text-[10px] font-mono font-semibold shadow-xs select-none">
-                <MapPin className="w-3.5 h-3.5 text-zinc-500" />
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-border bg-muted text-muted-foreground text-[10px] font-mono font-semibold shadow-xs select-none">
+                <MapPin className="w-3.5 h-3.5 text-muted-foreground" />
                 <span>Greater Noida, India</span>
               </span>
             </div>
@@ -497,11 +497,11 @@ export default function BentoGrid() {
           </div>
           <hr className="border-[var(--border)] dark:border-[var(--border)]" />
           <div className="space-y-3 text-xs font-mono text-[var(--text-secondary)] dark:text-[var(--metadata)]">
-            <a href="https://github.com/Abhiman74/interviewiq" target="_blank" rel="noopener noreferrer" className="block p-3 bg-[var(--secondary-bg)] dark:bg-[var(--secondary-bg)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700">
+            <a href="https://github.com/Abhiman74/interviewiq" target="_blank" rel="noopener noreferrer" className="block p-3 bg-[var(--secondary-bg)] dark:bg-[var(--secondary-bg)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl hover:border-border dark:hover:border-border">
               <strong className="text-[var(--text)] dark:text-white block">interviewiq &rarr;</strong>
               <span className="text-[10px] text-[var(--muted)] dark:text-[var(--metadata)]">AI coding interview platform with Monaco &amp; Web Speech RAG details.</span>
             </a>
-            <a href="https://github.com/Abhiman74/tradeflow" target="_blank" rel="noopener noreferrer" className="block p-3 bg-[var(--secondary-bg)] dark:bg-[var(--secondary-bg)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl hover:border-zinc-300 dark:hover:border-zinc-700">
+            <a href="https://github.com/Abhiman74/tradeflow" target="_blank" rel="noopener noreferrer" className="block p-3 bg-[var(--secondary-bg)] dark:bg-[var(--secondary-bg)] border border-[var(--border)] dark:border-[var(--border)] rounded-xl hover:border-border dark:hover:border-border">
               <strong className="text-[var(--text)] dark:text-white block">tradeflow &rarr;</strong>
               <span className="text-[10px] text-[var(--muted)] dark:text-[var(--metadata)]">Low-latency matching engine and simulations.</span>
             </a>
@@ -1037,7 +1037,7 @@ export default function BentoGrid() {
           <div className="flex items-center gap-3 my-3">
             <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
               <svg className="w-full h-full transform -rotate-90">
-                <circle cx="24" cy="24" r="20" className="stroke-zinc-200 dark:stroke-zinc-800" strokeWidth="3" fill="transparent" />
+                <circle cx="24" cy="24" r="20" className="stroke-foreground dark:stroke-muted-foreground" strokeWidth="3" fill="transparent" />
                 <circle cx="24" cy="24" r="20" className="stroke-orange-500" strokeWidth="3" fill="transparent" strokeDasharray="125" strokeDashoffset={125 - (125 * 170) / 300} strokeLinecap="round" />
               </svg>
               <span className="absolute text-[10px] font-bold text-[var(--text)] font-mono">170</span>
@@ -1250,7 +1250,7 @@ export default function BentoGrid() {
                 onChange={e => setForm({ ...form, name: e.target.value })}
                 placeholder="Name"
                 disabled={contactStatus === "submitting" || contactStatus === "success"}
-                className="col-span-1 h-8 px-2.5 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-700 text-[var(--text)] dark:text-white"
+                className="col-span-1 h-8 px-2.5 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-border dark:focus:border-border text-[var(--text)] dark:text-white"
               />
               <input
                 type="email"
@@ -1259,7 +1259,7 @@ export default function BentoGrid() {
                 onChange={e => setForm({ ...form, email: e.target.value })}
                 placeholder="Email"
                 disabled={contactStatus === "submitting" || contactStatus === "success"}
-                className="col-span-1 h-8 px-2.5 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-700 text-[var(--text)] dark:text-white"
+                className="col-span-1 h-8 px-2.5 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-border dark:focus:border-border text-[var(--text)] dark:text-white"
               />
               <textarea
                 name="message"
@@ -1268,12 +1268,12 @@ export default function BentoGrid() {
                 placeholder="Your message..."
                 disabled={contactStatus === "submitting" || contactStatus === "success"}
                 rows={1}
-                className="col-span-2 p-2 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-700 text-[var(--text)] dark:text-white resize-none"
+                className="col-span-2 p-2 rounded bg-[var(--secondary-bg)]/5 dark:bg-[var(--surface)] border border-[var(--border)] dark:border-[var(--border)] text-xs focus:outline-none focus:border-border dark:focus:border-border text-[var(--text)] dark:text-white resize-none"
               />
               <button
                 type="submit"
                 disabled={contactStatus === "submitting" || contactStatus === "success"}
-                className="col-span-2 h-8 rounded bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 text-[11px] font-mono font-bold hover:translate-y-[-1px] hover:shadow-xs transition-all disabled:opacity-50 cursor-pointer"
+                className="col-span-2 h-8 rounded bg-background bg-foreground text-white text-foreground text-[11px] font-mono font-bold hover:translate-y-[-1px] hover:shadow-xs transition-all disabled:opacity-50 cursor-pointer"
               >
                 {contactStatus === "submitting" ? "Transmitting..." : contactStatus === "success" ? "Message Transmitted ✓" : "Transmit Message"}
               </button>
@@ -1330,8 +1330,8 @@ export default function BentoGrid() {
               onClick={() => setFilter(f)}
               className={`px-5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 filter === f
-                  ? "bg-[var(--secondary-bg)] dark:bg-white text-white dark:text-[var(--text)] shadow-sm"
-                  : "text-[var(--muted)] dark:text-[var(--metadata)] hover:text-[var(--text)] dark:hover:text-white hover:bg-[var(--secondary-bg)] dark:hover:bg-zinc-850"
+                  ? "bg-[var(--secondary-bg)] bg-foreground text-white dark:text-[var(--text)] shadow-sm"
+                  : "text-[var(--muted)] dark:text-[var(--metadata)] hover:text-[var(--text)] dark:hover:text-white hover:bg-[var(--secondary-bg)] bg-muted"
               }`}
             >
               {f}

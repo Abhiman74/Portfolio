@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Mail } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Mail, Download } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 
 export default function Contact() {
@@ -40,75 +40,97 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-black/20">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="contact" className="py-28 relative overflow-hidden bg-[#09090B] border-t border-[#262626]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="mb-12">
-          <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest">05 / Connection</span>
-          <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mt-2">
+        <div className="mb-16">
+          <span className="text-xs font-mono text-[#71717A] uppercase tracking-widest">08 / Connection</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 font-sans">
             Get In Touch
           </h2>
-          <div className="h-0.5 w-12 bg-gradient-to-r from-blue-500 to-purple-500 mt-4 rounded" />
+          <div className="h-1 w-16 bg-gradient-to-r from-[#4F46E5] to-[#8B5CF6] mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Left: Contact Info */}
-          <div className="md:col-span-5 space-y-6">
-            <h3 className="text-lg sm:text-xl font-medium text-zinc-200">
-              Let&apos;s build something together.
+          <div className="lg:col-span-5 space-y-6">
+            <h3 className="text-2xl font-bold text-white font-sans leading-tight">
+              Let's build something together.
             </h3>
             
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans">
-              I am interested in Software Engineering, AI/ML Product development, and PM opportunities. Whether you have a project idea, a job posting, or just want to chat about developer tools and systems engineering, drop me a message!
+            <p className="text-base text-[#A1A1AA] leading-relaxed font-sans">
+              I am interested in Software Engineering, AI/ML Product development, and Product Management opportunities. Whether you have a project idea, a job posting, or just want to chat about system design and agentic workflows, drop me a line!
             </p>
 
-            <div className="space-y-4 pt-4 font-mono text-xs text-zinc-400">
+            <div className="space-y-4 pt-4 font-mono text-xs text-[#A1A1AA]">
+              {/* Direct Gmail */}
               <a
                 href="mailto:abhimansaharan@gmail.com"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
-                <div className="p-2 rounded bg-zinc-900 border border-zinc-800">
-                  <Mail className="w-4 h-4 text-indigo-400" />
+                <div className="p-2.5 rounded-lg bg-[#111113] border border-[#262626]">
+                  <Mail className="w-4 h-4 text-[#8B5CF6]" />
                 </div>
                 <span>abhimansaharan@gmail.com</span>
               </a>
 
+              {/* GitHub */}
               <a
                 href="https://github.com/Abhiman74"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
-                <div className="p-2 rounded bg-zinc-900 border border-zinc-800">
-                  <Github className="w-4 h-4 text-zinc-100" />
+                <div className="p-2.5 rounded-lg bg-[#111113] border border-[#262626]">
+                  <Github className="w-4 h-4 text-white" />
                 </div>
                 <span>github.com/Abhiman74</span>
               </a>
 
+              {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/abhiman-singh-623176216/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
-                <div className="p-2 rounded bg-zinc-900 border border-zinc-800">
-                  <Linkedin className="w-4 h-4 text-blue-400" />
+                <div className="p-2.5 rounded-lg bg-[#111113] border border-[#262626]">
+                  <Linkedin className="w-4 h-4 text-[#60A5FA]" />
                 </div>
-                <span>linkedin.com/in/abhiman-saharan (placeholder)</span>
+                <span>linkedin.com/in/abhiman-singh-623176216</span>
+              </a>
+            </div>
+
+            {/* Quick Actions Bar */}
+            <div className="flex flex-wrap items-center gap-3 pt-6">
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#262626] bg-[#111113] text-white hover:bg-white/5 text-xs font-mono font-bold transition-all shadow-sm"
+              >
+                <span>Download Resume</span>
+                <Download className="w-4 h-4 text-[#71717A]" />
+              </a>
+
+              <a
+                href="mailto:abhimansaharan@gmail.com"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#4F46E5] to-[#8B5CF6] text-white text-xs font-mono font-bold hover:opacity-95 transition-all shadow-sm"
+              >
+                <span>Send Email</span>
               </a>
             </div>
           </div>
 
           {/* Right: Contact Form */}
-          <div className="md:col-span-7">
-            <div className="glow-card border border-zinc-800 bg-[#0d0d0f]/50 p-6 sm:p-8 rounded-xl">
+          <div className="lg:col-span-7">
+            <div className="premium-card p-6 sm:p-8">
               <form onSubmit={handleSubmit} className="space-y-5">
                 
                 {/* Name */}
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                  <label htmlFor="name" className="text-[10px] font-mono text-[#71717A] uppercase tracking-widest block">
                     Your Name
                   </label>
                   <input
@@ -118,14 +140,14 @@ export default function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
+                    className="w-full h-11 px-4 rounded-lg border border-[#262626] bg-[#09090B] text-sm text-white placeholder-[#71717A] focus:outline-none focus:border-[#8B5CF6] transition-all font-sans"
                     placeholder="Jane Doe"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                  <label htmlFor="email" className="text-[10px] font-mono text-[#71717A] uppercase tracking-widest block">
                     Email Address
                   </label>
                   <input
@@ -135,14 +157,14 @@ export default function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full h-11 px-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans"
+                    className="w-full h-11 px-4 rounded-lg border border-[#262626] bg-[#09090B] text-sm text-white placeholder-[#71717A] focus:outline-none focus:border-[#8B5CF6] transition-all font-sans"
                     placeholder="jane@example.com"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block">
+                  <label htmlFor="message" className="text-[10px] font-mono text-[#71717A] uppercase tracking-widest block">
                     Message
                   </label>
                   <textarea
@@ -152,8 +174,8 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    className="w-full p-4 rounded-lg border border-zinc-800 bg-[#09090b]/60 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 focus:bg-black/80 transition-all font-sans resize-none"
-                    placeholder="Let's talk about..."
+                    className="w-full p-4 rounded-lg border border-[#262626] bg-[#09090B] text-sm text-white placeholder-[#71717A] focus:outline-none focus:border-[#8B5CF6] transition-all font-sans resize-none"
+                    placeholder="Describe your project, opportunity or message here..."
                   />
                 </div>
 
@@ -164,7 +186,7 @@ export default function Contact() {
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -5 }}
-                      className="flex items-center gap-2 text-xs font-mono text-rose-400 p-3 rounded border border-rose-500/10 bg-rose-500/5"
+                      className="flex items-center gap-2 text-xs font-mono text-[#E11D48] p-3 rounded-lg border border-[#E11D48]/10 bg-[#E11D48]/5"
                     >
                       <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{errorMsg}</span>
@@ -176,10 +198,10 @@ export default function Contact() {
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -5 }}
-                      className="flex items-center gap-2 text-xs font-mono text-emerald-400 p-3 rounded border border-emerald-500/10 bg-emerald-500/5"
+                      className="flex items-center gap-2 text-xs font-mono text-[#10B981] p-3 rounded-lg border border-[#10B981]/10 bg-[#10B981]/5"
                     >
                       <CheckCircle className="w-4 h-4 shrink-0" />
-                      <span>Message received successfully. I&apos;ll get back to you shortly!</span>
+                      <span>Transmission successful! I will get back to you shortly.</span>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -188,10 +210,10 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "submitting" || status === "success"}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 h-11 rounded-lg bg-zinc-100 text-[#09090b] text-sm font-semibold hover:bg-white active:scale-98 transition-all disabled:opacity-50 disabled:scale-100"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 h-11 rounded-lg bg-gradient-to-r from-[#4F46E5] to-[#8B5CF6] text-white font-semibold font-mono text-sm hover:opacity-95 active:scale-98 transition-all disabled:opacity-50 disabled:scale-100 cursor-pointer"
                 >
                   {status === "submitting" ? (
-                    <span className="w-4 h-4 rounded-full border-2 border-[#09090b] border-t-transparent animate-spin" />
+                    <span className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
                   ) : (
                     <>
                       <span>Transmit Message</span>

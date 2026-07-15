@@ -1,9 +1,17 @@
 import Navbar from "@/components/Navbar";
-import BentoGrid from "@/components/BentoGrid";
-import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import CommandPalette from "@/components/CommandPalette";
 import ScrollProgress from "@/components/ScrollProgress";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Projects from "@/components/Projects";
+import TechStack from "@/components/TechStack";
+import Experience from "@/components/Experience";
+import GitHubStats from "@/components/GitHubStats";
+import LeetCodeStats from "@/components/LeetCodeStats";
+import Currently from "@/components/Currently";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,20 +19,27 @@ export default function Home() {
       {/* Intro Loader */}
       <Loader />
 
-      {/* Global Interactive Elements */}
+      {/* Interactive Global Utilities */}
       <ScrollProgress />
       <CommandPalette />
 
-      {/* Header Navigation */}
+      {/* Sticky Header Navigation */}
       <Navbar />
 
-      {/* Main Grid Content */}
-      <main className="flex-1 w-full pt-24">
-        {/* Bento Grid layout replacing traditional linear scroll sections */}
-        <BentoGrid />
+      {/* Main Sequential Scroll Sections */}
+      <main className="flex-1 w-full">
+        <Hero />
+        <About />
+        <Projects />
+        <TechStack />
+        <Experience />
+        <GitHubStats />
+        <LeetCodeStats />
+        <Currently />
+        <Contact />
       </main>
 
-      {/* Layout Footer */}
+      {/* Global Footer */}
       <Footer />
     </>
   );

@@ -36,13 +36,13 @@ export default function Loader() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-2xl font-semibold tracking-widest text-zinc-100 font-mono mb-4"
+              className="text-2xl font-semibold tracking-widest text-foreground font-mono mb-4"
             >
               &lt;ABHIMAN /&gt;
             </motion.h1>
             
             {/* Progress line */}
-            <div className="w-40 h-[2px] bg-zinc-800 rounded-full overflow-hidden relative">
+            <div className="w-40 h-[2px] bg-card rounded-full overflow-hidden relative">
               <motion.div
                 initial={{ left: "-100%" }}
                 animate={{ left: "100%" }}
@@ -59,7 +59,7 @@ export default function Loader() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="text-xs text-zinc-400 mt-3 font-mono"
+              className="text-xs text-muted-foreground mt-3 font-mono"
             >
               INITIALIZING EXPERIENCE
             </motion.p>
