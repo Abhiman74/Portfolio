@@ -188,7 +188,7 @@ export default function Hero() {
 
             {/* Resume Button */}
             <a
-              href="/resume.pdf"
+              href="/abhimanResume.pdf"
               download
               className="inline-flex items-center gap-2 justify-center px-5 h-12 rounded-lg border border-[#262626] bg-[#111113] text-[#A1A1AA] hover:text-white text-sm font-semibold font-mono hover:bg-white/5 active:scale-95 transition-all cursor-pointer"
             >

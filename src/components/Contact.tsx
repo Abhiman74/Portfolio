@@ -106,7 +106,7 @@ export default function Contact() {
             {/* Quick Actions Bar */}
             <div className="flex flex-wrap items-center gap-3 pt-6">
               <a
-                href="/resume.pdf"
+                href="/abhimanResume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#262626] bg-[#111113] text-white hover:bg-white/5 text-xs font-mono font-bold transition-all shadow-sm"
               >

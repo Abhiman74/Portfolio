@@ -61,7 +61,7 @@ export default function Navbar() {
         {/* Right Controls */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="/resume.pdf"
+            href="/abhimanResume.pdf"
             download
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-[#262626] bg-[#111113] hover:bg-white/5 text-[#A1A1AA] hover:text-white text-xs font-mono transition-all shadow-sm"
           >
@@ -101,7 +101,7 @@ export default function Navbar() {
             ))}
             <hr className="border-[#262626] my-1" />
             <a
-              href="/resume.pdf"
+              href="/abhimanResume.pdf"
               download
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full border border-[#262626] bg-[#111113] text-[#A1A1AA] hover:text-white text-xs font-mono"
             >

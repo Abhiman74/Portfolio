@@ -94,7 +94,7 @@ export default function CommandPalette() {
       shortcut: ["R", "S"],
       icon: <FileText className="w-4 h-4" />,
       action: () => {
-        window.open("/resume.pdf", "_blank");
+        window.open("/abhimanResume.pdf", "_blank");
         setIsOpen(false);
       }
     }
