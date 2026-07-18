@@ -98,6 +98,25 @@ export default function About() {
                     </span>
                   </div>
                 </div>
+
+                {/* BITSOM Specialization */}
+                <div className="border-t border-[#262626] pt-4 space-y-2">
+                  <div>
+                    <h5 className="text-base font-semibold text-white">
+                      Product Management with GenAI
+                    </h5>
+                    <p className="text-xs text-[#A1A1AA] mt-0.5">BITS School of Management (BITSOM)</p>
+                  </div>
+                  <div className="flex items-center justify-between text-xs font-mono text-[#71717A]">
+                    <span className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5" />
+                      Dec 2025 – Jul 2026
+                    </span>
+                    <span className="text-xs text-[#10B981] font-bold">
+                      Masai Collaboration
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 

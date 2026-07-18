@@ -34,7 +34,7 @@ export default function Experience() {
       title: "Product Management (GenAI & Agentic AI)",
       subtitle: "BITS School of Management (BITSOM)",
       type: "Academic Specialization",
-      period: "Jul 2025 – Dec 2025",
+      period: "Dec 2025 – Jul 2026",
       location: "Masai Collaboration",
       icon: <Sparkles className="w-4 h-4 text-[#8B5CF6]" />,
       gradient: "from-[#4F46E5] to-[#8B5CF6]",
